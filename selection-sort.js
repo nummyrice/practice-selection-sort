@@ -45,7 +45,7 @@ function selectionSortInPlace(arr) {
   let temp = arr[divider];
 
   // Repeat while the unsorted half is not empty:
-  while(arr.slice(divider)) {
+  while(divider < arr.length) {
 
     // Do not move this console.log
     console.log(arr.join(","));
