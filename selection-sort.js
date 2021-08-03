@@ -3,20 +3,37 @@
 function selectionSort(arr) {
 
   // Copy the original array
+  let arcpy = arr.slice(0);
 
   // Create an array to store the sorted values
+  let sorted = [];
 
   // While the array is not empty...
+  while (arcpy.length) {
+
+
 
     // Do not move this console.log
-    console.log(sorted.join(","));
+
 
     // Find the index of the minimum value in the unsorted half
-
+    let minIdx = 0;
+    let minVal = arcpy.reduce((acc, ele, i) => {
+      if (ele < acc) {
+        acc = ele;
+        minIdx = i;
+      }
+      return acc;
+    });
+    console.log(sorted.join(","));
     // Save and remove the value at the min index
+    arcpy.splice(minIdx, 1);
+
 
     // Add the min value to the end of the sorted array
-
+    sorted.push(minVal);
+  }
+  return sorted;
 }
 
 
